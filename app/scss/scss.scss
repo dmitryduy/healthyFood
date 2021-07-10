@@ -1,5 +1,7 @@
 $mainColor: #DC780B;
 $paragraphColor: #150C01;
+$sectionMargin: 110px;
+$titleFont: 'Philosopher';
 
 @mixin text-settings($fontSize, $lineHeight,  $fontWeight: normal, $opacity: 1) {
   line-height: $lineHeight+px;
@@ -44,10 +46,24 @@ ul {
   margin: 0 auto;
 }
 
+.section-title {
+  font-family: $titleFont, sans-serif;
+  color: $paragraphColor;
+  @include text-settings(31, 35, bold)
+}
+
+.section-subtitle {
+  color: $mainColor;
+  @include text-settings(16, 19, 500);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
 .header {
   margin-left: -20px;
   margin-top: 30px;
   height: 100vh;
+  margin-bottom: $sectionMargin;
 
   &__inner {
     padding: 0 10px;
@@ -120,6 +136,42 @@ ul {
     background-color: rgba($mainColor, .1);
 
   }
+}
+
+.features {
+  padding: 0 10px;
+  margin-bottom: $sectionMargin;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+  }
 
 
+}
+
+.feature {
+  margin: 0 45px;
+  text-align: center;
+  &__img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 35px;
+  }
+
+  &__title {
+    font-family: $titleFont;
+    @include text-settings(25, 24, bold);
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    @include text-settings(16, 24, $opacity: .7)
+  }
 }
