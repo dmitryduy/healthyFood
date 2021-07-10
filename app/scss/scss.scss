@@ -20,6 +20,7 @@ $titleFont: 'Philosopher';
 
 body {
   font-family: "Roboto", SansSerif, serif;
+  color: #150C01;
 }
 
 ul {
@@ -57,6 +58,11 @@ ul {
   @include text-settings(16, 19, 500);
   letter-spacing: .2em;
   text-transform: uppercase;
+}
+
+.section-text {
+  color: $paragraphColor;
+  @include text-settings(16, 24, $opacity: .7);
 }
 
 .header {
@@ -141,6 +147,7 @@ ul {
 .features {
   padding: 0 10px;
   margin-bottom: $sectionMargin;
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -159,6 +166,7 @@ ul {
 .feature {
   margin: 0 45px;
   text-align: center;
+
   &__img {
     width: 45px;
     height: 45px;
@@ -171,18 +179,18 @@ ul {
     margin-bottom: 15px;
   }
 
-  &__text {
-    @include text-settings(16, 24, $opacity: .7)
-  }
 }
 
 .about {
   margin-bottom: $sectionMargin;
+  padding: 0 10px;
+
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
   &__img {
     width: 555px;
     object-fit: cover;
@@ -199,8 +207,71 @@ ul {
   }
 
   &__text {
-color: $paragraphColor;
-    @include text-settings(16, 24, $opacity: .7);
     margin-bottom: 30px;
+  }
+}
+
+
+.menu {
+  margin-bottom: $sectionMargin;
+  padding: 0 10px;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    margin-bottom: 60px;
+    max-width: 750px;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    max-width: 360px;
+    margin-bottom: 30px;
+
+    &-img {
+      margin-bottom: 15px;
+    }
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 25px;
+      @include text-settings(18, 24, bold);
+      margin-bottom: 20px;
+    }
+
+    &-text {
+      padding-left: 25px;
+      margin-bottom: 20px;
+    }
+
+    &-settings {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 25px;
+    }
+
+    &-button {
+      padding: 10px 11px;
+    }
   }
 }
