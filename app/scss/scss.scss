@@ -1,0 +1,125 @@
+$mainColor: #DC780B;
+$paragraphColor: #150C01;
+
+@mixin text-settings($fontSize, $lineHeight,  $fontWeight: normal, $opacity: 1) {
+  line-height: $lineHeight+px;
+  font-size: $fontSize+px;
+  font-weight: $fontWeight;
+  opacity: $opacity;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", SansSerif, serif;
+}
+
+ul {
+  list-style: none;
+}
+
+.button {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: $mainColor;
+  padding: 13px 30px;
+  color: #fff;
+  @include text-settings(16, 19);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-left: -20px;
+  margin-top: 30px;
+  height: 100vh;
+
+  &__inner {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__list-item {
+    margin: 0 20px;
+    @include text-settings(16, 19);
+    transition: color .3s ease;
+
+    &:hover {
+      color: $mainColor;
+      cursor: pointer;
+    }
+  }
+
+  &__list-item--active {
+    color: $mainColor;
+  }
+
+  &__content-box {
+    display: flex;
+  }
+
+  &__content {
+    margin: auto 0;
+  }
+
+  &__img {
+    object-fit: cover;
+    width: 710px;
+    position: relative;
+    top: -50px;
+    z-index: -1;
+  }
+
+  &__title {
+    width: 555px;
+    @include text-settings(49, 58, bold);
+    display: inline-block;
+    margin-bottom: 40px;
+
+  }
+
+  &__text {
+    color: $paragraphColor;
+    @include text-settings(16, 24, 500, 0.7);
+    display: inline-block;
+    margin-bottom: 50px;
+  }
+
+  &__button-2 {
+    margin-left: 30px;
+    color: $mainColor;
+    border: 1.5px solid $mainColor;
+    background-color: rgba($mainColor, .1);
+
+  }
+
+
+}
