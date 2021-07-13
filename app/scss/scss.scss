@@ -27,9 +27,12 @@ ul {
   list-style: none;
 }
 
-.button {
+button {
   outline: none;
   border: none;
+}
+
+.button {
   border-radius: 5px;
   background-color: $mainColor;
   padding: 13px 30px;
@@ -273,5 +276,52 @@ ul {
     &-button {
       padding: 10px 11px;
     }
+  }
+
+  &__button {
+    background-color: rgba(#E5E5E5, .1);
+    color: $mainColor;
+    margin-top: 37px;
+    border: 1px solid rgba($mainColor, .1);
+    border-radius: 5px;
+  }
+}
+
+.take-away {
+  margin-bottom: $sectionMargin;
+  &__inner {
+    display: flex;
+
+  }
+  &__content {
+    flex-basis: 555px;
+    margin-top: 165px;
+    margin-right: 200px;
+  }
+  &__title {
+    margin-bottom: 30px;
+  }
+  &__text {
+    display: inline-block;
+    margin-bottom: 40px;
+    @include text-settings(16, 24, $opacity: .7)
+  }
+  &__market-button--app-store {
+    margin-right: 30px;
+    background-image: url("../images/app-store-market.png");
+    width: 163px;
+    height: 48px;
+    border-radius: 5px;
+  }
+  &__market-button--play-market {
+    background-image: url("../images/google-play-market.png");
+    width: 179px;
+    height: 48px;
+    border-radius: 5px;
+  }
+  &__image {
+    width: 325px;
+    height: 650px;
+
   }
 }
