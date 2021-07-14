@@ -110,6 +110,7 @@ button {
 
   &__content {
     margin: auto 0;
+    padding: 0 10px;
   }
 
   &__img {
@@ -145,10 +146,10 @@ button {
 }
 
 .features {
-  padding: 0 10px;
   margin-bottom: $sectionMargin;
 
   &__inner {
+    padding: 0 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -289,6 +290,7 @@ button {
 
   &__inner {
     display: flex;
+    padding: 0 10px;
 
   }
 
@@ -332,7 +334,9 @@ button {
 
 .reviews {
   margin-bottom: 120px;
+
   &__inner {
+    padding: 0 10px;
     text-align: center;
     margin: 0 auto;
     max-width: 750px;
@@ -356,9 +360,11 @@ button {
     margin: auto 20px;
     background-color: transparent;
   }
-  &__button--disabled{
+
+  &__button--disabled {
     opacity: .5;
-}
+  }
+
   &__slider {
     display: flex;
   }
@@ -407,5 +413,77 @@ button {
     @include text-settings(12, 14);
     text-transform: uppercase;
     color: #000;
+  }
+
+}
+
+.contacts {
+  background-color: #fbf1e7;
+  &__inner {
+    padding: 115px 10px 117px;
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__title {
+    margin-bottom: 50px;
+  }
+  &__form {
+    display: flex;
+    height: 74px;
+  }
+  &__input{
+    flex-basis: 600px;
+    padding: 32px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: none;
+    &::placeholder {
+      @include text-settings(16, 41, $opacity: .5);
+    }
+  }
+  &__button{
+    flex-basis: 150px;
+    background-color: $mainColor;
+    border-radius: 10px;
+    padding: 30px 57px;
+    @include text-settings(18, 10, 500);
+    color: #fff;
+  }
+}
+
+.footer {
+  background-color: #252525;
+  &__inner {
+
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 137px 10px 104px;
+    color: #fff;
+  }
+  &__link {
+    color: #fff;
+    text-decoration: none;
+    @include text-settings(14, 16, $opacity: .7)
+  }
+
+  &__item {
+    @include text-settings(14, 16, $opacity: .7)
+  }
+  &__item + &__item{
+    margin-top: 17px;
+  }
+  &__title {
+    margin-bottom: 25px;
+    @include text-settings(18, 20);
+  }
+  &__social {
+    display: flex;
+    margin-top: 25px;
+  }
+  &__social-item {
+    margin-right: 10px;
+    cursor: pointer;
   }
 }
