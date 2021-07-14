@@ -30,6 +30,7 @@ ul {
 button {
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 .button {
@@ -38,10 +39,6 @@ button {
   padding: 13px 30px;
   color: #fff;
   @include text-settings(16, 19);
-
-  &:hover {
-    cursor: pointer;
-  }
 
 }
 
@@ -289,23 +286,28 @@ button {
 
 .take-away {
   margin-bottom: $sectionMargin;
+
   &__inner {
     display: flex;
 
   }
+
   &__content {
     flex-basis: 555px;
     margin-top: 165px;
     margin-right: 200px;
   }
+
   &__title {
     margin-bottom: 30px;
   }
+
   &__text {
     display: inline-block;
     margin-bottom: 40px;
     @include text-settings(16, 24, $opacity: .7)
   }
+
   &__market-button--app-store {
     margin-right: 30px;
     background-image: url("../images/app-store-market.png");
@@ -313,15 +315,97 @@ button {
     height: 48px;
     border-radius: 5px;
   }
+
   &__market-button--play-market {
     background-image: url("../images/google-play-market.png");
     width: 179px;
     height: 48px;
     border-radius: 5px;
   }
+
   &__image {
     width: 325px;
     height: 650px;
 
+  }
+}
+
+.reviews {
+  margin-bottom: 120px;
+  &__inner {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 750px;
+  }
+
+  &__subtitle {
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    margin-bottom: 23px;
+
+  }
+
+  &__text {
+    display: inline-block;
+    margin-bottom: 73px;
+  }
+
+  &__button {
+    margin: auto 20px;
+    background-color: transparent;
+  }
+  &__button--disabled{
+    opacity: .5;
+}
+  &__slider {
+    display: flex;
+  }
+
+  &__slider-container {
+    overflow: hidden;
+  }
+
+  &__slider-list {
+    display: flex;
+    max-width: 700px;
+    transition: transform .4s ease;
+  }
+
+  &__slider-item {
+    flex: 0 0 100%;
+    margin: 0 auto;
+  }
+
+  &__slider-image {
+    margin-bottom: 40px;
+  }
+
+  &__slider-text {
+    @include text-settings(16, 24);
+    color: #000;
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 506px;
+
+  }
+
+  &__slider-rating {
+    margin-bottom: 32px;
+  }
+
+  &__slider-author {
+    @include text-settings(16, 19);
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 6px;
+
+  }
+
+  &__slider-activity {
+    @include text-settings(12, 14);
+    text-transform: uppercase;
+    color: #000;
   }
 }

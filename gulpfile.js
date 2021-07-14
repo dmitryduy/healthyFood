@@ -10,6 +10,14 @@ function browser() {
         }
     });
 }
+function scripts() {
+    return src([
+        'app/js/main.js'
+    ])
+        .pipe(concat('main.min.js'))
+        .pipe(dest('app/js'))
+        .pipe(browserSync.stream())
+}
 
 function styles() {
     return src('app/scss/*.scss')
@@ -21,11 +29,12 @@ function styles() {
 
 function watching() {
     watch(['app/scss/*.scss'], styles)
+    watch(['app/js/main.js', '!app/js/main.min.js'], scripts)
     watch(['app/*.html']).on('change', browserSync.reload)
 }
 
 exports.styles = styles;
 exports.watching = watching;
 exports.browser = browser;
-
-exports.default = parallel(browser, watching)
+exports.scripts = scripts;
+exports.default = parallel(scripts, browser, watching)
